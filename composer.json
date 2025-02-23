@@ -1,0 +1,40 @@
+{
+  "name": "sourcebroker/deployer-typo3-database",
+  "description": "Database sync for TYPO3 with deployer-extended-database.",
+  "license": "MIT",
+  "keywords": [
+    "TYPO3",
+    "deployer"
+  ],
+  "authors": [
+    {
+      "name": "Krystian Szymukowicz",
+      "email": "k.szymukowicz@gmail.com"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "helhum/dotenv-connector": "^3 || dev-master",
+    "deployer/deployer": "~7.0 || dev-master",
+    "sourcebroker/deployer-extended-database": "^18 || dev-master",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SourceBroker\\DeployerTypo3Database\\": "src/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true,
+      "helhum/dotenv-connector": true
+    }
+  }
+}
