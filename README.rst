@@ -18,7 +18,7 @@ This is experimental package for now. Do not use it yet.
 What does it do?
 ----------------
 
-This package provides settings to use `sourcebroker/deployer-extended_database`_ package with TYPO3 CMS.
+This package provides settings to use package `sourcebroker/deployer-extended-database`_ with TYPO3 CMS.
 It allows to sync database between instances.
 
 Installation
@@ -34,7 +34,9 @@ Installation
    ::
 
       require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
-      new \SourceBroker\DeployerTypo3Database\Loader();
+      new \SourceBroker\DeployerLoader\Loader([
+        ['get' => 'sourcebroker/deployer-typo3-database'],
+      ]);
 
 3) On each instance create ``.env`` file which should be out of git and have at least ``INSTANCE`` with the same name as
    defined for ``host()`` in ``deploy.php`` file. You can use this file also to store database credentials and all other
@@ -42,14 +44,14 @@ Installation
 
    ::
 
-      TYPO3_CONTEXT='Production//Live'
-      INSTANCE='live'
+      TYPO3_CONTEXT='Production'
+      INSTANCE='production'
 
-      TYPO3__DB__Connections__Default__dbname='t3base11_live'
+      TYPO3__DB__Connections__Default__dbname='t3base13_production'
       TYPO3__DB__Connections__Default__host='127.0.0.1'
       TYPO3__DB__Connections__Default__password='password'
       TYPO3__DB__Connections__Default__port='3306'
-      TYPO3__DB__Connections__Default__user='t3base11_live'
+      TYPO3__DB__Connections__Default__user='t3base13_production'
 
 
 
@@ -63,12 +65,16 @@ Installation
 Synchronizing database
 ----------------------
 
-The command for synchronizing database from live database to local instance is:
+The command for synchronizing database from production database to local instance is:
 ::
 
-   dep db:pull live
+   dep db:pull production
 
-   dep db:copy live --options=target:beta
+
+The command for synchronizing database from production to staging is:
+::
+
+   dep db:copy production --options=target:staging
 
 
 Example of working configuration
@@ -84,25 +90,26 @@ This is example of working configuration for TYPO3 13.
 
   require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
 
-  new \SourceBroker\DeployerTypo3Database\Loader();
+  new \SourceBroker\DeployerLoader\Loader([
+    ['get' => 'sourcebroker/deployer-typo3-database'],
+  ]);
 
-  host('live')
+  host('production')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base11-public/live/.bin/php');
-      ->set('deploy_path', '/home/www/t3base11/live');
+      ->set('bin/php', '/home/www/t3base13-public/production/.bin/php');
+      ->set('deploy_path', '~/t3base13/production');
 
   host('beta')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base11-public/beta/.bin/php');
-      ->set('deploy_path', '/home/www/t3base11/beta');
+      ->set('bin/php', '/home/www/t3base13-public/staging/.bin/php');
+      ->set('deploy_path', '~/t3base13/staging');
 
   localhost('local')
       ->set('bin/php', 'php')
       ->set('deploy_path', getcwd());
 
-  ?>
 
 
 Changelog
