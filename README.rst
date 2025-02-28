@@ -100,7 +100,7 @@ This is example of working configuration for TYPO3 13.
       ->set('bin/php', '/home/www/t3base13-public/production/.bin/php');
       ->set('deploy_path', '~/t3base13/production');
 
-  host('beta')
+  host('staging')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
       ->set('bin/php', '/home/www/t3base13-public/staging/.bin/php');
