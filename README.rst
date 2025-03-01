@@ -2,7 +2,7 @@ deployer-typo3-database
 =======================
 
       .. image:: http://img.shields.io/packagist/v/sourcebroker/deployer-typo3-database.svg?style=flat
-         :target: https://packagist.org/packages/sourcebroker/deployer-extended-typo3
+         :target: https://packagist.org/packages/sourcebroker/deployer-typo3-database
 
       .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
          :target: https://packagist.org/packages/sourcebroker/deployer-typo3-database
@@ -33,10 +33,13 @@ Installation
 2) Put following lines on the beginning of your deploy.php:
    ::
 
-      require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
+      require_once(__DIR__ . '/vendor/autoload.php');
       new \SourceBroker\DeployerLoader\Loader([
         ['get' => 'sourcebroker/deployer-typo3-database'],
       ]);
+
+   If you have some conflicts of packages between your root project and deployer.phar you can try
+   to use ``/vendor/sourcebroker/deployer-loader/autoload.php`` instead of ``/vendor/autoload.php``.
 
 3) On each instance create ``.env`` file which should be out of git and have at least ``INSTANCE`` with the same name as
    defined for ``host()`` in ``deploy.php`` file. You can use this file also to store database credentials and all other
@@ -88,7 +91,7 @@ This is example of working configuration for TYPO3 13.
 
   namespace Deployer;
 
-  require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
+  require_once(__DIR__ . '/vendor/autoload.php');
 
   new \SourceBroker\DeployerLoader\Loader([
     ['get' => 'sourcebroker/deployer-typo3-database'],
