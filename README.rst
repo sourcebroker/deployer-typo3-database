@@ -38,9 +38,6 @@ Installation
         ['get' => 'sourcebroker/deployer-typo3-database'],
       ]);
 
-   If you have some conflicts of packages between your root project and deployer.phar you can try
-   to use ``/vendor/sourcebroker/deployer-loader/autoload.php`` instead of ``/vendor/autoload.php``.
-
 3) On each instance create ``.env`` file which should be out of git and have at least ``INSTANCE`` with the same name as
    defined for ``host()`` in ``deploy.php`` file. You can use this file also to store database credentials and all other
    settings that are different per instance. Example for ``.env`` file:
