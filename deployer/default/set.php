@@ -9,7 +9,7 @@ set('local/bin/typo3', function () {
             return $composerConfig['config']['bin-dir'] . '/typo3';
         }
     }
-    return 'vendor/bin/typo3';
+    return file_exists('./vendor/bin/typo3cms') ? 'vendor/bin/typo3cms' : 'vendor/bin/typo3';
 });
 
 // Look https://github.com/sourcebroker/deployer-extended-database for docs
