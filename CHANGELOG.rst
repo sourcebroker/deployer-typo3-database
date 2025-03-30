@@ -2,6 +2,11 @@
 Changelog
 ---------
 
+0.0.5
+-----
+
+1) [TASK][BREAKING] Update ``sourcebroker/deployer-extended-database`` dependency.
+
 0.0.4
 -----
 
