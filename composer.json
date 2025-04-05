@@ -13,30 +13,12 @@
     }
   ],
   "require": {
-    "helhum/dotenv-connector": "^3 || dev-master",
-    "deployer/deployer": "~7.0 || dev-master",
+    "ext-json": "*",
     "sourcebroker/deployer-extended-database": "^19 || dev-master",
-    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
       "SourceBroker\\DeployerTypo3Database\\": "src/"
-    }
-  },
-  "extra": {
-    "deployer": {
-      "loader-file": "config/loader.php"
-    },
-    "typo3/cms": {
-      "web-dir": ".Build/Web",
-      "app-dir": ".Build"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "typo3/cms-composer-installers": true,
-      "typo3/class-alias-loader": true,
-      "helhum/dotenv-connector": true
     }
   }
 }

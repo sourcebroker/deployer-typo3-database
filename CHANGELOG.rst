@@ -2,6 +2,13 @@
 Changelog
 ---------
 
+0.0.6
+-----
+
+1) [TASK][BREAKING] Drop requirement to ``helhum/dotenv-connector`` as ``sourcebroker/deployer-instance`` is acting.
+   Drop requirement to ``deployer/deployer`` as is already declared at ``sourcebroker/deployer-extended-database``.
+   Clean up composer.json.
+
 0.0.5
 -----
 
