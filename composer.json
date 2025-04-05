@@ -14,7 +14,7 @@
   ],
   "require": {
     "ext-json": "*",
-    "sourcebroker/deployer-extended-database": "^19 || dev-master",
+    "sourcebroker/deployer-extended-database": "^20 || dev-master"
   },
   "autoload": {
     "psr-4": {

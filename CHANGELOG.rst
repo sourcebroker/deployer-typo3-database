@@ -2,6 +2,11 @@
 Changelog
 ---------
 
+0.0.7
+-----
+
+1) [TASK][BREAKING] Update to breaking change of ``sourcebroker/deployer-instance``.
+
 0.0.6
 -----
 
@@ -10,7 +15,6 @@ Changelog
    Clean up composer.json.
 
 2) [TASK][BREAKING] Remove disabling push to top instances and backup settings. This should be part of higher, custom package.
-
 
 0.0.5
 -----
