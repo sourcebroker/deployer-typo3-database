@@ -12,13 +12,6 @@ set('local/bin/typo3', function () {
     return file_exists('./vendor/bin/typo3cms') ? 'vendor/bin/typo3cms' : 'vendor/bin/typo3';
 });
 
-// Look https://github.com/sourcebroker/deployer-extended-database for docs
-set('db_allow_push_live', false);
-set('db_allow_pull_live', false);
-set('db_allow_copy_live', false);
-
-set('db_dumpclean_keep', ['*' => 5, 'live' => 10,]);
-
 set('db_ddev_database_config', [
     'host' => 'db',
     'port' => $_ENV['DDEV_HOST_DB_PORT'] ?? null,

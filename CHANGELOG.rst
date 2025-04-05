@@ -9,6 +9,9 @@ Changelog
    Drop requirement to ``deployer/deployer`` as is already declared at ``sourcebroker/deployer-extended-database``.
    Clean up composer.json.
 
+2) [TASK][BREAKING] Remove disabling push to top instances and backup settings. This should be part of higher, custom package.
+
+
 0.0.5
 -----
 
