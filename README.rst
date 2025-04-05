@@ -10,16 +10,12 @@ deployer-typo3-database
 .. contents:: :local:
 
 
-Notice (!!!)
-------------
-This is experimental package for now. Do not use it yet.
-
-
 What does it do?
 ----------------
 
 This package provides settings to use package `sourcebroker/deployer-extended-database`_ with TYPO3 CMS.
 It allows to sync database between instances.
+
 
 Installation
 ------------
@@ -38,9 +34,9 @@ Installation
         ['get' => 'sourcebroker/deployer-typo3-database'],
       ]);
 
-3) On each instance create ``.env`` file which should be out of git and have at least ``INSTANCE`` with the same name as
-   defined for ``host()`` in ``deploy.php`` file. You can use this file also to store database credentials and all other
-   settings that are different per instance. Example for ``.env`` file:
+3) On each instance create ``.env`` (or ``.env.local``) file which should be out of git and have at least ``INSTANCE`` with
+   the same name as defined for ``host()`` in ``deploy.php`` file. You can use this file also to store database credentials
+   and all other settings that are different per instance. Example for ``.env`` file:
 
    ::
 
@@ -55,11 +51,20 @@ Installation
 
 
 
-   If you want that Deployer get database data from TYPO3 directly instead of reading from .env file then set:
+   If you want that Deployer get database data from TYPO3 directly instead of reading from ``.env`` file then set:
    ::
 
       set('driver_typo3cms', true);
 
+
+   As an alternative you can also not create any ``.env`` file but make sure that the env variable ``INSTANCE`` exists
+   in system at hosts defined in deployer (and also at your local host). For example at local ddev level you can define it in
+   ``.ddev/config.yaml``:
+
+   ::
+
+    web_environment:
+        - INSTANCE=local
 
 
 Synchronizing database
@@ -97,19 +102,14 @@ This is example of working configuration for TYPO3 13.
   host('production')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base13-public/production/.bin/php');
+      ->set('bin/php', '/usr/bin/php8.4');
       ->set('deploy_path', '~/t3base13/production');
 
   host('staging')
       ->setHostname('vm-dev.example.com')
       ->setRemoteUser('deploy')
-      ->set('bin/php', '/home/www/t3base13-public/staging/.bin/php');
+      ->set('bin/php', '/usr/bin/php8.4');
       ->set('deploy_path', '~/t3base13/staging');
-
-  localhost('local')
-      ->set('bin/php', 'php')
-      ->set('deploy_path', getcwd());
-
 
 
 Changelog
