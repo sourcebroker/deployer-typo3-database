@@ -6,7 +6,7 @@ use Deployer\Exception\ConfigurationException;
 use SourceBroker\DeployerInstance\Configuration;
 
 /**
- * Use /vendor/bin/typo3cms configuration:showactive DB to get database data directly from TYPO3.
+ * Use /vendor/bin/typo3 configuration:showactive DB to get database data directly from TYPO3.
  */
 class Typo3CmsDriver
 {

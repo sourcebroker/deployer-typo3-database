@@ -36,8 +36,6 @@ set('db_default', [
         'tx_crawler_queue',
         'tx_crawler_process',
     ],
-    'post_sql_in' => '',
-    'post_sql_in_markers' => ''
 ]);
 
 // Look https://github.com/sourcebroker/deployer-extended-database for docs
