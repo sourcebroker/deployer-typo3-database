@@ -2,6 +2,13 @@
 Changelog
 ---------
 
+0.0.8
+-----
+
+1) [TASK][BREAKING] Remove some tables from dump exclude. They can affect size of backups and GDPR.
+   Tables removed from exclude: 'sys_history', 'sys_log', 'tx_powermail_domain_model_mail', 'tx_powermail_domain_model_answer'.
+   If needed they should be included on higher level custom package.
+
 0.0.7
 -----
 
