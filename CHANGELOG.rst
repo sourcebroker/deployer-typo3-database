@@ -2,11 +2,11 @@
 Changelog
 ---------
 
-main
-----
+1.0.0
+-----
 
 1) [TASK] Clean up composer.json, gitignore.
-
+2) [TASK] Release first stable version.
 
 0.0.8
 -----
