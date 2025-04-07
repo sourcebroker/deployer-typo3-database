@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+main
+----
+
+1) [TASK] Clean up composer.json, gitignore.
+
+
 0.0.8
 -----
 

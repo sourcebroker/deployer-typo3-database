@@ -20,5 +20,6 @@
     "psr-4": {
       "SourceBroker\\DeployerTypo3Database\\": "src/"
     }
-  }
+  },
+  "prefer-stable": true
 }
