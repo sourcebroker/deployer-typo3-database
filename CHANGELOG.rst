@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+1.1.0
+-----
+
+1) [TASK] Extend `ignore_tables_out` with `sys_http_report` as it can get quite big and, 99% of the time, it's not
+   required in the dev environment (thanks to @mikestreety)
+
 1.0.0
 -----
 

@@ -29,6 +29,7 @@ set('db_default', [
         'fe_sessions',
         'fe_session_data',
         'sys_file_processedfile',
+        'sys_http_report',
         'sys_refindex',
         'tx_devlog',
         'tx_extensionmanager_domain_model_extension',
